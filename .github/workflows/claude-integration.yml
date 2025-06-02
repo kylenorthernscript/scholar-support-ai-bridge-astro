@@ -5,88 +5,91 @@ on:
     types: [opened, edited]
   issue_comment:
     types: [created, edited]
-  pull_request:
-    types: [opened, edited, synchronize]
 
 permissions:
-  contents: write
+  contents: read
   issues: write
-  pull-requests: write
 
 jobs:
-  claude-code:
+  claude-response:
     runs-on: ubuntu-latest
-    if: |
-      (github.event_name == 'issues' && contains(github.event.issue.body || '', '@claude')) ||
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body || '', '@claude')) ||
-      (github.event_name == 'pull_request' && contains(github.event.pull_request.body || '', '@claude'))
+    if: contains(github.event.issue.body || github.event.comment.body || '', '@claude')
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: Claude Code Response
+      - name: Claude API Response
         uses: actions/github-script@v7
         with:
           script: |
-            // Use built-in fetch in Node.js 18+
-            
-            // Get the issue or comment content
             let requestText = '';
             let issueNumber = null;
             
             if (context.eventName === 'issues') {
-              requestText = context.payload.issue.body;
+              requestText = context.payload.issue.body || '';
               issueNumber = context.payload.issue.number;
             } else if (context.eventName === 'issue_comment') {
-              requestText = context.payload.comment.body;
+              requestText = context.payload.comment.body || '';
               issueNumber = context.payload.issue.number;
-            } else if (context.eventName === 'pull_request') {
-              requestText = context.payload.pull_request.body;
-              issueNumber = context.payload.pull_request.number;
             }
             
-            // Extract the request after @claude
-            const claudeIndex = requestText.indexOf('@claude');
-            if (claudeIndex === -1) return;
+            console.log('Event:', context.eventName);
+            console.log('Request text:', requestText);
+            console.log('Issue number:', issueNumber);
             
+            if (!requestText.includes('@claude')) {
+              console.log('No @claude mention found');
+              return;
+            }
+            
+            const claudeIndex = requestText.indexOf('@claude');
             const actualRequest = requestText.substring(claudeIndex + 7).trim();
             
-            // Call Claude API
-            const response = await fetch('https://api.anthropic.com/v1/messages', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': process.env.ANTHROPIC_API_KEY,
-                'anthropic-version': '2023-06-01'
-              },
-              body: JSON.stringify({
-                model: 'claude-3-sonnet-20240229',
-                max_tokens: 1024,
-                messages: [{
-                  role: 'user',
-                  content: `You are helping with the Theta Clinical Support project (シータ・クリニカル・サポート). This is an Astro + React + Tailwind CSS project for a clinical research support service.
+            console.log('Actual request:', actualRequest);
+            
+            try {
+              const response = await fetch('https://api.anthropic.com/v1/messages', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'x-api-key': process.env.ANTHROPIC_API_KEY,
+                  'anthropic-version': '2023-06-01'
+                },
+                body: JSON.stringify({
+                  model: 'claude-3-sonnet-20240229',
+                  max_tokens: 1024,
+                  messages: [{
+                    role: 'user',
+                    content: `You are helping with the Theta Clinical Support project. This is an Astro + React + Tailwind CSS project.
 
 Request: ${actualRequest}`
-                }]
-              })
-            });
-            
-            if (!response.ok) {
-              throw new Error(`Claude API error: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            const claudeResponse = data.content[0].text;
-            
-            // Post response as comment
-            if (issueNumber) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issueNumber,
-                body: `🤖 **Claude Response:**\n\n${claudeResponse}\n\n---\n*Powered by Claude Code integration*`
+                  }]
+                })
               });
+              
+              if (!response.ok) {
+                throw new Error(`Claude API error: ${response.status}`);
+              }
+              
+              const data = await response.json();
+              const claudeResponse = data.content[0].text;
+              
+              if (issueNumber) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber,
+                  body: `🤖 **Claude Response:**\n\n${claudeResponse}\n\n---\n*Powered by Claude Code integration*`
+                });
+              }
+            } catch (error) {
+              console.error('Error:', error);
+              if (issueNumber) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber,
+                  body: `❌ Error processing Claude request: ${error.message}`
+                });
+              }
             }
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
