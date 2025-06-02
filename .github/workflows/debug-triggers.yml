@@ -1,0 +1,50 @@
+name: Debug Triggers
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug Event
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log('Event name:', context.eventName);
+            console.log('Event action:', context.payload.action);
+            console.log('Full payload:', JSON.stringify(context.payload, null, 2));
+            
+            let issueNumber = null;
+            let bodyText = '';
+            
+            if (context.eventName === 'issues') {
+              issueNumber = context.payload.issue.number;
+              bodyText = context.payload.issue.body || '';
+            } else if (context.eventName === 'issue_comment') {
+              issueNumber = context.payload.issue.number;
+              bodyText = context.payload.comment.body || '';
+            }
+            
+            console.log('Body text:', bodyText);
+            console.log('Contains @claude:', bodyText.includes('@claude'));
+            
+            if (issueNumber) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: `🔍 Debug Info:
+- Event: ${context.eventName}
+- Action: ${context.payload.action}
+- Body contains @claude: ${bodyText.includes('@claude')}
+- Body text: "${bodyText}"`
+              });
+            }
