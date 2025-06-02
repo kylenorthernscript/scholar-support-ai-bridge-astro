@@ -33,20 +33,15 @@ jobs:
         run: npm run build
         working-directory: ${{ env.BUILD_PATH }}
         
-      - name: Deploy to Netlify
-        uses: netlify/actions/cli@master
-        with:
-          args: deploy --dir=dist --prod
-        env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      - name: Deploy to Netlify (Main Branch)
         if: github.ref == 'refs/heads/main'
-        
-      - name: Deploy Preview to Netlify
-        uses: netlify/actions/cli@master
-        with:
-          args: deploy --dir=dist
-        env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          echo "Build completed successfully!"
+          echo "Deploy manually to Netlify using the built files in dist/"
+          echo "Or set up Netlify to deploy automatically from this repository"
+          
+      - name: Preview Build (PR)
         if: github.event_name == 'pull_request'
+        run: |
+          echo "Preview build completed successfully!"
+          echo "Files are ready for preview deployment"
