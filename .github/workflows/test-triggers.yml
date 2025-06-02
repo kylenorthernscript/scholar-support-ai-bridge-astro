@@ -42,11 +42,6 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issueNumber,
-                body: `✅ **Test Workflow Triggered**
-                
-Event: ${context.eventName}
-Action: ${context.payload.action}
-Contains @claude: ${bodyText.includes('@claude')}
-Timestamp: ${new Date().toISOString()}`
+                body: `✅ **Test Workflow Triggered**\n\nEvent: ${context.eventName}\nAction: ${context.payload.action}\nContains @claude: ${bodyText.includes('@claude')}\nTimestamp: ${new Date().toISOString()}`
               });
             }
