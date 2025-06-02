@@ -1,0 +1,77 @@
+---
+// HeroSection Astro コンポーネント
+---
+
+<section class="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200/30 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+  </div>
+  
+  <div class="container-custom relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="animate-fade-in">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          外国人研究参加者集め、<br />
+          <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+            もう悩まない！
+          </span><br />
+          <span class="text-3xl md:text-4xl">AIがあなたの研究を加速します</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          研究者が本来の研究活動に集中できるよう、外国人参加者リクルート、研究関連文書の翻訳、関連事務作業を、
+          <span class="text-primary-600 font-semibold">AIと専門チームの力で包括的にサポート</span>します。
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <button 
+            id="contact-btn"
+            class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 rounded-md"
+          >
+            まずは無料相談・資料請求
+          </button>
+          <button 
+            id="services-btn"
+            class="border-2 border-primary-600 text-primary-600 hover:bg-primary-50 px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-md"
+          >
+            サービス詳細を見る
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg animate-slide-in-left">
+            <div class="text-3xl font-bold text-primary-600 mb-2">15年+</div>
+            <div class="text-gray-700">外国人サポート実績</div>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg animate-slide-in-left" style="animation-delay: 0.2s;">
+            <div class="text-3xl font-bold text-secondary-600 mb-2">AI活用</div>
+            <div class="text-gray-700">効率的マッチング</div>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg animate-slide-in-left" style="animation-delay: 0.4s;">
+            <div class="text-3xl font-bold text-accent-600 mb-2">24時間</div>
+            <div class="text-gray-700">迅速対応体制</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // スムーススクロール機能
+  document.getElementById('contact-btn')?.addEventListener('click', () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  document.getElementById('services-btn')?.addEventListener('click', () => {
+    const element = document.getElementById('services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
