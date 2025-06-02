@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,48 +22,51 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      isScrolled ? 'backdrop-blur-glass shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg"></div>
-            <span className="text-lg font-bold text-gray-900">Research Support AI</span>
+        <div className="flex items-center justify-between h-18">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl shadow-lg"></div>
+            <span className="text-xl font-bold text-foreground">Research Support AI</span>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium"
             >
               サービス内容
             </button>
             <button 
               onClick={() => scrollToSection('features')}
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium"
             >
               選ばれる理由
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium"
             >
               よくある質問
             </button>
             <button 
               onClick={() => scrollToSection('company')}
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium"
             >
               会社情報
             </button>
           </nav>
           
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md transition-colors"
-          >
-            無料相談
-          </button>
+          <div className="flex items-center space-x-4">
+            <ThemeToggle />
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="btn-primary text-sm px-6 py-3"
+            >
+              無料相談
+            </button>
+          </div>
         </div>
       </div>
     </header>
