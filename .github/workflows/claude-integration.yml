@@ -2,11 +2,12 @@ name: Claude Code Ready
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [opened, edited]
   issue_comment:
-    types: [created]
+    types: [created, edited]
   pull_request:
-    types: [opened, ready_for_review]
+    types: [opened, edited, synchronize]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,9 +18,10 @@ jobs:
   claude-ready:
     runs-on: ubuntu-latest
     if: |
-      contains(github.event.issue.body, '@claude') || 
-      contains(github.event.comment.body, '@claude') ||
-      contains(github.event.pull_request.body, '@claude')
+      contains(github.event.issue.body || '', '@claude') || 
+      contains(github.event.comment.body || '', '@claude') ||
+      contains(github.event.pull_request.body || '', '@claude') ||
+      github.event_name == 'workflow_dispatch'
     
     steps:
       - name: Acknowledge Claude Request
