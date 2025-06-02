@@ -1,38 +1,49 @@
 ---
-// FeaturesSection コンポーネント
+// FeaturesSection コンポーネント - Modern Design with Cards
 ---
 
-<section id="features" class="section-padding bg-gray-50">
+<section id="features" class="section-padding bg-blue-50 dark:bg-blue-950/30">
   <div class="container-custom">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+    <div class="text-center mb-20">
+      <h2 class="mb-6">
         選ばれる理由
       </h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        シータ・クリニカル・サポートが多くの研究者に選ばれる4つの理由
+      </p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="text-center">
-        <div class="text-4xl mb-4">⚡</div>
-        <h3 class="text-lg font-bold mb-2">高速対応</h3>
-        <p class="text-gray-600">24時間以内の初回対応</p>
+      <div class="card-modern p-8 text-center group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+        <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300">
+          <div class="text-3xl filter grayscale group-hover:grayscale-0 transition-all duration-300">⚡</div>
+        </div>
+        <h3 class="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">高速対応</h3>
+        <p class="text-muted-foreground leading-relaxed">24時間以内の初回対応でスピーディーなサポートを実現</p>
       </div>
       
-      <div class="text-center">
-        <div class="text-4xl mb-4">🎯</div>
-        <h3 class="text-lg font-bold mb-2">高精度マッチング</h3>
-        <p class="text-gray-600">AI技術による最適な参加者選定</p>
+      <div class="card-modern p-8 text-center group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+        <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center group-hover:from-secondary/30 group-hover:to-secondary/20 transition-all duration-300">
+          <div class="text-3xl filter grayscale group-hover:grayscale-0 transition-all duration-300">🎯</div>
+        </div>
+        <h3 class="text-lg font-semibold mb-3 group-hover:text-secondary transition-colors">高精度マッチング</h3>
+        <p class="text-muted-foreground leading-relaxed">AI技術による最適な参加者選定で効率的な研究を支援</p>
       </div>
       
-      <div class="text-center">
-        <div class="text-4xl mb-4">🌐</div>
-        <h3 class="text-lg font-bold mb-2">多言語対応</h3>
-        <p class="text-gray-600">15年以上の外国人サポート実績</p>
+      <div class="card-modern p-8 text-center group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+        <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-secondary/30 transition-all duration-300">
+          <div class="text-3xl filter grayscale group-hover:grayscale-0 transition-all duration-300">🌐</div>
+        </div>
+        <h3 class="text-lg font-semibold mb-3 group-hover:text-gradient transition-colors">多言語対応</h3>
+        <p class="text-muted-foreground leading-relaxed">15年以上の外国人サポート実績による安心の多言語サービス</p>
       </div>
       
-      <div class="text-center">
-        <div class="text-4xl mb-4">💰</div>
-        <h3 class="text-lg font-bold mb-2">コスト効率</h3>
-        <p class="text-gray-600">研究予算に配慮した柔軟な料金体系</p>
+      <div class="card-modern p-8 text-center group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+        <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent/30 to-accent/20 rounded-xl flex items-center justify-center group-hover:from-accent/40 group-hover:to-accent/30 transition-all duration-300">
+          <div class="text-3xl filter grayscale group-hover:grayscale-0 transition-all duration-300">💰</div>
+        </div>
+        <h3 class="text-lg font-semibold mb-3 group-hover:text-accent-foreground transition-colors">コスト効率</h3>
+        <p class="text-muted-foreground leading-relaxed">研究予算に配慮した柔軟な料金体系でコストを最適化</p>
       </div>
     </div>
   </div>

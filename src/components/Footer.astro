@@ -7,11 +7,27 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
         <div class="flex items-center space-x-2 mb-4">
-          <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg"></div>
-          <span class="text-lg font-bold">Research Support AI</span>
+          <div class="relative w-8 h-8 bg-slate-800 rounded-lg overflow-hidden">
+            {/* Orange accent line */}
+            <div class="absolute top-0 left-0 w-full h-0.5 bg-orange-500"></div>
+            
+            {/* Content area */}
+            <div class="flex items-center justify-center h-full">
+              <span class="text-white font-bold text-sm font-serif">θ</span>
+            </div>
+            
+            {/* Subtle pattern */}
+            <div class="absolute inset-0 opacity-10">
+              <div class="grid grid-cols-2 gap-0.5 h-full p-0.5">
+                <div class="bg-white rounded-sm"></div>
+                <div class="bg-white rounded-sm"></div>
+              </div>
+            </div>
+          </div>
+          <span class="text-lg font-bold">Theta Clinical Support</span>
         </div>
-        <p class="text-gray-400">
-          AI技術で研究者の皆様をサポートします
+        <p class="text-muted-foreground">
+          シータ・クリニカル・サポートでAI技術を活用した研究支援
         </p>
       </div>
       
@@ -26,15 +42,15 @@
       
       <div>
         <h3 class="text-lg font-bold mb-4">お問い合わせ</h3>
-        <p class="text-gray-400">
-          info@scholar-support-ai.com<br/>
+        <p class="text-muted-foreground">
+          info@theta-tech.co.jp<br/>
           03-1234-5678
         </p>
       </div>
     </div>
     
-    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-      <p>&copy; 2024 Scholar Support AI Bridge. All rights reserved.</p>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-muted-foreground">
+      <p>&copy; 2024 株式会社シータ・テクノロジーズ. All rights reserved.</p>
     </div>
   </div>
 </footer>

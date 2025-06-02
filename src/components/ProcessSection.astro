@@ -1,38 +1,143 @@
 ---
-// ProcessSection コンポーネント  
+// ProcessSection コンポーネント - Modern Infographics Design
 ---
 
-<section id="process" class="section-padding">
+<section id="process" class="section-padding bg-orange-50 dark:bg-orange-950/20">
   <div class="container-custom">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+    <div class="text-center mb-20">
+      <h2 class="mb-6">
         サービスの流れ
       </h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        シータ・クリニカル・サポートのシンプルな3ステップで研究支援を開始
+      </p>
     </div>
     
-    <div class="max-w-4xl mx-auto">
-      <div class="space-y-8">
-        <div class="flex items-center space-x-6">
-          <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
-          <div>
-            <h3 class="text-xl font-bold">お問い合わせ・ヒアリング</h3>
-            <p class="text-gray-600">研究内容と参加者条件をお聞かせください</p>
+    <div class="max-w-6xl mx-auto">
+      <!-- Desktop Layout -->
+      <div class="hidden md:block">
+        <div class="relative">
+          <!-- Connection Lines -->
+          <div class="absolute top-20 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
+            <svg class="w-full h-8" viewBox="0 0 800 32" fill="none">
+              <path d="M100 16 L300 16 M500 16 L700 16" stroke="hsl(var(--primary))" stroke-width="2" stroke-dasharray="8 4" opacity="0.5"/>
+              <!-- Arrows -->
+              <polygon points="295,12 305,16 295,20" fill="hsl(var(--primary))" opacity="0.6"/>
+              <polygon points="695,12 705,16 695,20" fill="hsl(var(--primary))" opacity="0.6"/>
+            </svg>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-12">
+            <!-- Step 1 -->
+            <div class="text-center relative">
+              <div class="relative mx-auto mb-8">
+                <div class="w-32 h-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl flex items-center justify-center mb-6 mx-auto shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
+                    📋
+                  </div>
+                </div>
+                <div class="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                  1
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold mb-4 text-foreground">お問い合わせ・ヒアリング</h3>
+              <p class="text-muted-foreground leading-relaxed">研究内容と参加者条件を詳しくお聞かせください</p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="text-center relative">
+              <div class="relative mx-auto mb-8">
+                <div class="w-32 h-32 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-3xl flex items-center justify-center mb-6 mx-auto shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <div class="w-20 h-20 bg-secondary rounded-2xl flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
+                    🤖
+                  </div>
+                </div>
+                <div class="absolute -top-2 -right-2 w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                  2
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold mb-4 text-foreground">AI分析・マッチング</h3>
+              <p class="text-muted-foreground leading-relaxed">条件に合致する参加者候補をAIが効率的に抽出</p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="text-center relative">
+              <div class="relative mx-auto mb-8">
+                <div class="w-32 h-32 bg-gradient-to-br from-primary/15 to-secondary/15 rounded-3xl flex items-center justify-center mb-6 mx-auto shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <div class="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
+                    🚀
+                  </div>
+                </div>
+                <div class="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-primary to-secondary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                  3
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold mb-4 text-foreground">サポート実施</h3>
+              <p class="text-muted-foreground leading-relaxed">翻訳、連絡、事務手続きを専門チームが代行</p>
+            </div>
           </div>
         </div>
-        
-        <div class="flex items-center space-x-6">
-          <div class="w-12 h-12 bg-secondary-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
-          <div>
-            <h3 class="text-xl font-bold">AI分析・マッチング</h3>
-            <p class="text-gray-600">条件に合致する参加者候補をAIが効率的に抽出</p>
+      </div>
+      
+      <!-- Mobile Layout -->
+      <div class="block md:hidden">
+        <div class="space-y-12">
+          <!-- Step 1 -->
+          <div class="flex items-start space-x-6">
+            <div class="relative flex-shrink-0">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center shadow-lg">
+                <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white text-lg font-bold">
+                  📋
+                </div>
+              </div>
+              <div class="absolute -top-1 -right-1 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold">
+                1
+              </div>
+              <!-- Connecting line -->
+              <div class="absolute top-20 left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-primary/30"></div>
+            </div>
+            <div class="pt-2">
+              <h3 class="text-lg font-semibold mb-2 text-foreground">お問い合わせ・ヒアリング</h3>
+              <p class="text-muted-foreground">研究内容と参加者条件を詳しくお聞かせください</p>
+            </div>
           </div>
-        </div>
-        
-        <div class="flex items-center space-x-6">
-          <div class="w-12 h-12 bg-accent-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
-          <div>
-            <h3 class="text-xl font-bold">サポート実施</h3>
-            <p class="text-gray-600">翻訳、連絡、事務手続きを専門チームが代行</p>
+          
+          <!-- Step 2 -->
+          <div class="flex items-start space-x-6">
+            <div class="relative flex-shrink-0">
+              <div class="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center shadow-lg">
+                <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white text-lg font-bold">
+                  🤖
+                </div>
+              </div>
+              <div class="absolute -top-1 -right-1 w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center text-xs font-bold">
+                2
+              </div>
+              <!-- Connecting line -->
+              <div class="absolute top-20 left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-secondary/30"></div>
+            </div>
+            <div class="pt-2">
+              <h3 class="text-lg font-semibold mb-2 text-foreground">AI分析・マッチング</h3>
+              <p class="text-muted-foreground">条件に合致する参加者候補をAIが効率的に抽出</p>
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="flex items-start space-x-6">
+            <div class="relative flex-shrink-0">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary/15 to-secondary/15 rounded-2xl flex items-center justify-center shadow-lg">
+                <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center text-white text-lg font-bold">
+                  🚀
+                </div>
+              </div>
+              <div class="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-r from-primary to-secondary text-white rounded-full flex items-center justify-center text-xs font-bold">
+                3
+              </div>
+            </div>
+            <div class="pt-2">
+              <h3 class="text-lg font-semibold mb-2 text-foreground">サポート実施</h3>
+              <p class="text-muted-foreground">翻訳、連絡、事務手続きを専門チームが代行</p>
+            </div>
           </div>
         </div>
       </div>

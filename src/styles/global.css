@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
@@ -97,28 +97,32 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    @apply font-medium tracking-tight;
+    letter-spacing: -0.02em;
   }
 
   h1 {
-    @apply text-4xl md:text-6xl lg:text-7xl font-bold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    line-height: 1.2;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+    line-height: 1.3;
   }
 
   h3 {
-    @apply text-xl md:text-2xl;
+    @apply text-xl md:text-2xl font-medium;
+    line-height: 1.4;
+  }
+
+  .hero-title {
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
   }
 }
 
 @layer components {
-  .hero-gradient {
-    background: linear-gradient(135deg, 
-      hsl(var(--gradient-from) / 0.1) 0%, 
-      hsl(var(--gradient-to) / 0.1) 100%);
-  }
   
   .section-padding {
     @apply py-20 md:py-32;
@@ -148,7 +152,47 @@
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 
+  .text-highlight {
+    @apply relative inline-block;
+  }
+
+  .text-highlight::before {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-sm;
+  }
+
+  .text-highlight::after {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-md;
+  }
+
   .backdrop-blur-glass {
     @apply backdrop-blur-md bg-background/80 border border-border/50;
+  }
+
+  .theta-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+  }
+
+  .theta-icon::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    border-radius: inherit;
+    opacity: 0.9;
+  }
+
+  .theta-icon span {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 }
