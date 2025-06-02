@@ -79,7 +79,7 @@ Request: ${actualRequest}`
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issueNumber,
-                  body: `🤖 **Claude Response:**\n\n${claudeResponse}\n\n---\n*Powered by Claude Code integration*`
+                  body: `🤖 **Claude Response:**\\n\\n${claudeResponse}\\n\\n---\\n*Powered by Claude Code integration*`
                 });
               }
             } catch (error) {
