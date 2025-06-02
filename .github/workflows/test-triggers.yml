@@ -1,0 +1,52 @@
+name: Test Triggers
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always Run Test
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log('Workflow triggered successfully!');
+            console.log('Event name:', context.eventName);
+            console.log('Event action:', context.payload.action);
+            
+            let issueNumber = null;
+            let bodyText = '';
+            
+            if (context.eventName === 'issues') {
+              issueNumber = context.payload.issue.number;
+              bodyText = context.payload.issue.body || '';
+              console.log('Issue body:', bodyText);
+            } else if (context.eventName === 'issue_comment') {
+              issueNumber = context.payload.issue.number;
+              bodyText = context.payload.comment.body || '';
+              console.log('Comment body:', bodyText);
+            }
+            
+            console.log('Contains @claude:', bodyText.includes('@claude'));
+            
+            if (issueNumber) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: `✅ **Test Workflow Triggered**
+                
+Event: ${context.eventName}
+Action: ${context.payload.action}
+Contains @claude: ${bodyText.includes('@claude')}
+Timestamp: ${new Date().toISOString()}`
+              });
+            }

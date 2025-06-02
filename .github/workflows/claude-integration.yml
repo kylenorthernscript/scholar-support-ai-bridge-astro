@@ -13,7 +13,9 @@ permissions:
 jobs:
   claude-response:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.body || github.event.comment.body || '', '@claude')
+    if: |
+      (github.event_name == 'issues' && contains(github.event.issue.body || '', '@claude')) ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body || '', '@claude'))
     
     steps:
       - name: Claude API Response
