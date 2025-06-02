@@ -1,0 +1,30 @@
+{
+  "name": "Theta Clinical Support",
+  "description": "シータ・クリニカル・サポート - 臨床研究参加者リクルート・翻訳・事務代行サービス",
+  "version": "1.0.0",
+  "framework": "Astro",
+  "language": "TypeScript",
+  "styling": "Tailwind CSS",
+  "packageManager": "npm",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "outputDir": "dist",
+  "publicDir": "public",
+  "srcDir": "src",
+  "rules": [
+    "プロフェッショナルな企業サイトとしての品質を維持",
+    "レスポンシブデザインを必須とする",
+    "アクセシビリティガイドラインに準拠",
+    "パフォーマンスを最適化",
+    "SEOベストプラクティスに従う",
+    "ダークモード対応を維持",
+    "Theta Clinical Supportブランドガイドラインに従う"
+  ],
+  "preferences": {
+    "codeStyle": "modern",
+    "componentStructure": "atomic",
+    "cssMethodology": "utility-first",
+    "accessibility": "wcag-aa",
+    "performance": "optimized"
+  }
+}
