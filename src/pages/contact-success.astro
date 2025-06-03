@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="お問い合わせありがとうございます | Theta Clinical Support">
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 max-w-2xl w-full text-center">
+      <div class="mb-6">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+          <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        お問い合わせありがとうございます
+      </h1>
+      
+      <p class="text-lg text-gray-600 mb-8">
+        お問い合わせを受け付けました。<br>
+        担当者より1-2営業日以内にご連絡させていただきます。
+      </p>
+      
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-8 text-left">
+        <p class="text-blue-800 font-semibold mb-1">
+          お急ぎの場合
+        </p>
+        <p class="text-blue-700 text-sm">
+          研究開始まで1ヶ月を切っている場合は、直接お電話にてご連絡ください。<br>
+          TEL: 03-1234-5678（平日 9:00-18:00）
+        </p>
+      </div>
+      
+      <a 
+        href="/"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg font-semibold transition-colors"
+      >
+        トップページに戻る
+      </a>
+    </div>
+  </div>
+</Layout>
