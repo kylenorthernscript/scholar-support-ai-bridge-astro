@@ -1,0 +1,65 @@
+---
+// Test page for the experimental chatbot
+import Layout from '../../../layouts/Layout.astro';
+import { ChatbotWidget } from '../../../components/chatbot/ChatbotWidget';
+
+const isChatbotEnabled = import.meta.env.ENABLE_AI_CHATBOT === 'true' || false;
+---
+
+<Layout title="AI Chatbot Test - Theta Clinical Support">
+  <div class="min-h-screen bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">AI Chatbot Experimental Feature</h1>
+        
+        {isChatbotEnabled ? (
+          <div class="space-y-6">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+              <p class="text-green-800">✅ Chatbot is enabled</p>
+            </div>
+            
+            <div class="prose max-w-none">
+              <h2 class="text-xl font-semibold text-gray-700 mb-3">機能概要</h2>
+              <ul class="space-y-2 text-gray-600">
+                <li>24時間365日対応の自動応答システム</li>
+                <li>研究参加希望者の初期プレスクリーニング</li>
+                <li>AIマッチングによる適切な研究案件の提案</li>
+                <li>多言語対応（日本語、英語、中国語、スペイン語、フランス語）</li>
+                <li>研究倫理を遵守した安全な通信</li>
+              </ul>
+              
+              <h2 class="text-xl font-semibold text-gray-700 mt-6 mb-3">テスト手順</h2>
+              <ol class="list-decimal list-inside space-y-2 text-gray-600">
+                <li>右下のチャットボタンをクリック</li>
+                <li>AIアシスタントとの対話を開始</li>
+                <li>基本情報の入力（年齢、性別、地域）</li>
+                <li>参加可能な研究形式の選択</li>
+                <li>言語・時間帯の設定</li>
+                <li>マッチング結果の確認</li>
+              </ol>
+            </div>
+            
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+              <p class="text-blue-800 font-medium">💡 ヒント</p>
+              <p class="text-blue-700 text-sm mt-1">
+                このチャットボットは実験的な機能です。実際のAPI統合前のプロトタイプとして動作します。
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="text-red-800">❌ Chatbot is disabled</p>
+            <p class="text-red-600 text-sm mt-2">
+              Enable it by setting ENABLE_AI_CHATBOT=true in your .env file
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  {isChatbotEnabled && (
+    <ChatbotWidget client:load />
+  )}
+</Layout>

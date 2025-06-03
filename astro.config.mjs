@@ -11,4 +11,12 @@ export default defineConfig({
     tailwind()
   ],
   site: 'https://theta-clinical-support.netlify.app',
+  vite: {
+    define: {
+      'import.meta.env.ENABLE_AI_CHATBOT': JSON.stringify('true')
+    },
+    ssr: {
+      noExternal: ['@astrojs/react']
+    }
+  }
 });
