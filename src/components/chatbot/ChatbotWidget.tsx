@@ -90,11 +90,10 @@ export const ChatbotWidget: React.FC = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
           </svg>
           
-          {/* Badge for "NEW" or notification */}
-          <span className="absolute -top-1 -right-1 flex h-6 w-6">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-6 w-6 bg-red-500 text-white text-xs font-bold items-center justify-center">
-              NEW
+          {/* Badge for "DEMO" */}
+          <span className="absolute -top-1 -right-1 flex h-8 w-8">
+            <span className="relative inline-flex rounded-full h-8 w-8 bg-yellow-500 text-gray-900 text-xs font-bold items-center justify-center">
+              DEMO
             </span>
           </span>
         </button>
@@ -102,7 +101,7 @@ export const ChatbotWidget: React.FC = () => {
         {/* Tooltip */}
         <div className="absolute bottom-20 right-0 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap shadow-lg animate-bounce">
           <div className="absolute bottom-0 right-6 transform translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900"></div>
-          💬 AIアシスタントと相談する
+          🎯 AIチャットボットのデモを体験
         </div>
       </div>
 
@@ -121,8 +120,8 @@ export const ChatbotWidget: React.FC = () => {
               </svg>
             </div>
             <div>
-              <h3 className="font-semibold">リサーチ参加アシスタント</h3>
-              <p className="text-xs text-blue-100">24時間365日対応</p>
+              <h3 className="font-semibold">リサーチ参加アシスタント (デモ)</h3>
+              <p className="text-xs text-blue-100">カスタマイズ可能なAIチャットボット</p>
             </div>
           </div>
           <button
