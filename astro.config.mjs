@@ -17,6 +17,12 @@ export default defineConfig({
     },
     ssr: {
       noExternal: ['@astrojs/react']
+    },
+    server: {
+      allowedHosts: [
+        'localhost',
+        '.netlify.app' // すべてのNetlifyプレビューデプロイを許可
+      ]
     }
   }
 });
