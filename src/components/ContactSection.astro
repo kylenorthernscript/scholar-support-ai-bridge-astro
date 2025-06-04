@@ -47,40 +47,191 @@
               Don't fill this out if you're human: <input name="bot-field" />
             </label>
           </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                お名前<span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                name="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                required
+              />
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                メールアドレス<span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="email" 
+                name="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                ご所属<span class="text-red-500">*</span>
+              </label>
+              <select 
+                name="organization_type"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                required
+              >
+                <option value="">選択してください</option>
+                <option value="university">大学・研究機関</option>
+                <option value="company">民間企業</option>
+                <option value="government">官公庁・自治体</option>
+                <option value="medical">医療機関</option>
+                <option value="npo">NPO・団体</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                研究分野・業界
+              </label>
+              <select 
+                name="research_field"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              >
+                <option value="">選択してください</option>
+                <option value="sociology">社会学・移民研究</option>
+                <option value="psychology">心理学・異文化研究</option>
+                <option value="economics">経済学・労働研究</option>
+                <option value="education">言語・教育研究</option>
+                <option value="medical">医学・公衆衛生</option>
+                <option value="business">マーケティング・商品開発</option>
+                <option value="policy">政策・行政研究</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                必要な参加者数（概算）
+              </label>
+              <select 
+                name="participant_count"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              >
+                <option value="">選択してください</option>
+                <option value="1-10">1〜10名</option>
+                <option value="11-30">11〜30名</option>
+                <option value="31-50">31〜50名</option>
+                <option value="51-100">51〜100名</option>
+                <option value="100+">100名以上</option>
+                <option value="undecided">未定</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                希望開始時期
+              </label>
+              <select 
+                name="start_timing"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              >
+                <option value="">選択してください</option>
+                <option value="immediate">至急（1ヶ月以内）</option>
+                <option value="1-3months">1〜3ヶ月以内</option>
+                <option value="3-6months">3〜6ヶ月以内</option>
+                <option value="6months+">6ヶ月以降</option>
+                <option value="planning">企画段階</option>
+              </select>
+            </div>
+          </div>
+
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">
-              お名前
+              対象とする外国人の属性（複数選択可）
             </label>
-            <input 
-              type="text" 
-              name="name"
-              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-              required
-            />
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="target_attributes" value="student" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">留学生</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="target_attributes" value="worker" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">就労者</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="target_attributes" value="technical_intern" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">技能実習生</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="target_attributes" value="family" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">家族・配偶者</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="target_attributes" value="specific_skill" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">特定技能</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="target_attributes" value="other" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">その他</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              必要なサービス（複数選択可）
+            </label>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="services" value="recruitment" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">参加者リクルート</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="services" value="translation" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">多言語翻訳</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="services" value="administrative" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                <span class="text-sm">事務代行</span>
+              </label>
+            </div>
           </div>
           
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">
-              メールアドレス
-            </label>
-            <input 
-              type="email" 
-              name="email"
-              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-              required
-            />
-          </div>
-          
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">
-              研究内容・ご相談内容
+              研究内容・ご相談内容<span class="text-red-500">*</span>
             </label>
             <textarea 
               rows="4"
               name="message"
+              placeholder="研究の目的、内容、特別な要件などをお書きください"
               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
               required
             ></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              予算規模（概算）
+            </label>
+            <select 
+              name="budget_range"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            >
+              <option value="">選択してください</option>
+              <option value="under-50">50万円未満</option>
+              <option value="50-100">50〜100万円</option>
+              <option value="100-300">100〜300万円</option>
+              <option value="300-500">300〜500万円</option>
+              <option value="500+">500万円以上</option>
+              <option value="discuss">要相談</option>
+            </select>
           </div>
           
           <button 
