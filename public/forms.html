@@ -5,7 +5,57 @@
   <form name="contact" netlify netlify-honeypot="bot-field" action="/contact-success" hidden>
     <input type="text" name="name" />
     <input type="email" name="email" />
+    <select name="organization_type">
+      <option value="university">大学・研究機関</option>
+      <option value="company">民間企業</option>
+      <option value="government">官公庁・自治体</option>
+      <option value="medical">医療機関</option>
+      <option value="npo">NPO・団体</option>
+      <option value="other">その他</option>
+    </select>
+    <select name="research_field">
+      <option value="sociology">社会学・移民研究</option>
+      <option value="psychology">心理学・異文化研究</option>
+      <option value="economics">経済学・労働研究</option>
+      <option value="education">言語・教育研究</option>
+      <option value="medical">医学・公衆衛生</option>
+      <option value="business">マーケティング・商品開発</option>
+      <option value="policy">政策・行政研究</option>
+      <option value="other">その他</option>
+    </select>
+    <select name="participant_count">
+      <option value="1-10">1〜10名</option>
+      <option value="11-30">11〜30名</option>
+      <option value="31-50">31〜50名</option>
+      <option value="51-100">51〜100名</option>
+      <option value="100+">100名以上</option>
+      <option value="undecided">未定</option>
+    </select>
+    <select name="start_timing">
+      <option value="immediate">至急（1ヶ月以内）</option>
+      <option value="1-3months">1〜3ヶ月以内</option>
+      <option value="3-6months">3〜6ヶ月以内</option>
+      <option value="6months+">6ヶ月以降</option>
+      <option value="planning">企画段階</option>
+    </select>
+    <input type="checkbox" name="target_attributes" value="student" />
+    <input type="checkbox" name="target_attributes" value="worker" />
+    <input type="checkbox" name="target_attributes" value="technical_intern" />
+    <input type="checkbox" name="target_attributes" value="family" />
+    <input type="checkbox" name="target_attributes" value="specific_skill" />
+    <input type="checkbox" name="target_attributes" value="other" />
+    <input type="checkbox" name="services" value="recruitment" />
+    <input type="checkbox" name="services" value="translation" />
+    <input type="checkbox" name="services" value="administrative" />
     <textarea name="message"></textarea>
+    <select name="budget_range">
+      <option value="under-50">50万円未満</option>
+      <option value="50-100">50〜100万円</option>
+      <option value="100-300">100〜300万円</option>
+      <option value="300-500">300〜500万円</option>
+      <option value="500+">500万円以上</option>
+      <option value="discuss">要相談</option>
+    </select>
   </form>
 </body>
 </html>
