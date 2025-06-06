@@ -56,5 +56,68 @@
       <option value="discuss">要相談</option>
     </select>
   </form>
+
+  <!-- University Landing Form -->
+  <form name="university-landing-contact" netlify netlify-honeypot="bot-field" action="/contact-success" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="organization" />
+    <input type="hidden" name="landing_page" />
+    <select name="research_field">
+      <option value="sociology">社会学・移民研究</option>
+      <option value="psychology">心理学・異文化研究</option>
+      <option value="economics">経済学・労働研究</option>
+      <option value="education">言語・教育研究</option>
+      <option value="medical">医学・公衆衛生</option>
+      <option value="other">その他</option>
+    </select>
+    <select name="participant_count">
+      <option value="1-10">1〜10名</option>
+      <option value="11-30">11〜30名</option>
+      <option value="31-50">31〜50名</option>
+      <option value="51-100">51〜100名</option>
+      <option value="100+">100名以上</option>
+    </select>
+    <select name="start_timing">
+      <option value="immediate">1ヶ月以内</option>
+      <option value="1-3months">1〜3ヶ月以内</option>
+      <option value="3-6months">3〜6ヶ月以内</option>
+      <option value="6months+">6ヶ月以降</option>
+      <option value="planning">企画段階</option>
+    </select>
+    <textarea name="message"></textarea>
+    <input type="checkbox" name="privacy_agreement" />
+  </form>
+
+  <!-- Corporate Landing Form -->
+  <form name="corporate-landing-contact" netlify netlify-honeypot="bot-field" action="/contact-success" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="organization" />
+    <input type="hidden" name="landing_page" />
+    <select name="industry">
+      <option value="food">食品・飲料</option>
+      <option value="cosmetics">化粧品・美容</option>
+      <option value="it">IT・アプリ・サービス</option>
+      <option value="housing">住宅・不動産</option>
+      <option value="retail">小売・流通</option>
+      <option value="finance">金融・保険</option>
+      <option value="other">その他</option>
+    </select>
+    <select name="participant_count">
+      <option value="1-20">1〜20名</option>
+      <option value="21-50">21〜50名</option>
+      <option value="51-100">51〜100名</option>
+      <option value="100+">100名以上</option>
+    </select>
+    <select name="timing">
+      <option value="immediate">2週間以内</option>
+      <option value="1month">1ヶ月以内</option>
+      <option value="2-3months">2〜3ヶ月以内</option>
+      <option value="planning">企画段階</option>
+    </select>
+    <textarea name="message"></textarea>
+    <input type="checkbox" name="privacy_agreement" />
+  </form>
 </body>
 </html>
