@@ -10,58 +10,60 @@
   </div>
   
   <div class="container-custom relative z-10">
-    <div class="max-w-5xl mx-auto text-center">
-      <div class="animate-fade-in pt-20 md:pt-0">
-        <h1 class="hero-title mb-12 max-w-4xl mx-auto">
-          <span class="block text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 tracking-tight leading-tight">
-            外国人参加者リクルートを、もっとシンプルに
-          </span>
-          <span class="block text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground tracking-normal leading-relaxed">
-            研究に集中すべきあなたの時間を、リクルート業務に奪われていませんか？
-          </span>
-        </h1>
-        
-        <p class="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-          <span class="text-primary font-semibold">シータ・クリニカル・サポート</span>は、<span class="text-primary font-semibold">AI × 専門チーム</span>で外国人参加者リクルート・翻訳・事務作業を一括代行。研究者が研究に専念できる環境を実現します。
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <button 
-            id="contact-btn"
-            class="btn-primary animate-pulse-glow"
-          >
-            研究計画に合わせた無料見積もり
-          </button>
-          <button 
-            id="services-btn"
-            class="btn-outline"
-          >
-            サービス詳細を見る
-          </button>
-          <a 
-            href="/experimental/chatbot"
-            class="btn-ai flex items-center gap-2"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-            </svg>
-            AIチャットボット デモを体験
-          </a>
+    <div class="max-w-6xl mx-auto">
+      <div class="animate-fade-in pt-20 md:pt-24 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <!-- Left side: Text content -->
+        <div class="text-center md:text-left">
+          <h1 class="hero-title mb-8">
+            <span class="block text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight">
+              外国人参加者リクルートをもっとシンプルに
+            </span>
+          </h1>
+          
+          <p class="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
+            <span class="text-primary font-semibold">AI × 専門チーム</span>で臨床研究を加速。<br />
+            研究者が本業に専念できる環境を実現します。
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+            <button 
+              id="contact-btn"
+              class="btn-primary animate-pulse-glow"
+            >
+              無料相談
+            </button>
+            <button 
+              id="services-btn"
+              class="btn-outline"
+            >
+              サービス詳細
+            </button>
+          </div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div class="card-modern p-8 animate-slide-in-left">
-            <div class="text-4xl font-bold text-primary mb-3">豊富</div>
-            <div class="text-muted-foreground font-medium">外国人サポート実績</div>
-          </div>
-          <div class="card-modern p-8 animate-slide-in-left" style="animation-delay: 0.2s;">
-            <div class="text-4xl font-bold text-secondary mb-3">AI活用</div>
-            <div class="text-muted-foreground font-medium">効率的マッチング</div>
-          </div>
-          <div class="card-modern p-8 animate-slide-in-left" style="animation-delay: 0.4s;">
-            <div class="text-4xl font-bold text-gradient mb-3">24時間</div>
-            <div class="text-muted-foreground font-medium">迅速対応体制</div>
-          </div>
+        <!-- Right side: Logo -->
+        <div class="flex items-center justify-center md:justify-end">
+          <img 
+            src="/logo.svg" 
+            alt="Theta Clinical Support" 
+            class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 drop-shadow-2xl animate-float"
+          />
+        </div>
+      </div>
+      
+      <!-- Bottom stats section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16">
+        <div class="text-center animate-slide-in-left">
+          <div class="text-3xl md:text-4xl font-bold text-primary mb-2">豊富な実績</div>
+          <div class="text-sm md:text-base text-muted-foreground">外国人参加者サポート</div>
+        </div>
+        <div class="text-center animate-slide-in-left" style="animation-delay: 0.2s;">
+          <div class="text-3xl md:text-4xl font-bold text-secondary mb-2">AI活用</div>
+          <div class="text-sm md:text-base text-muted-foreground">効率的マッチング</div>
+        </div>
+        <div class="text-center animate-slide-in-left" style="animation-delay: 0.4s;">
+          <div class="text-3xl md:text-4xl font-bold text-gradient mb-2">24時間</div>
+          <div class="text-sm md:text-base text-muted-foreground">迅速対応体制</div>
         </div>
       </div>
     </div>

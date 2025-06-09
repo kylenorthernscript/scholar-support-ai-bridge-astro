@@ -25,12 +25,12 @@ const Header = () => {
       isScrolled ? 'backdrop-blur-glass shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-18">
-          <div className="flex items-center space-x-3">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          <div className="flex items-center space-x-3 md:space-x-4">
             <img 
               src="/logo.svg" 
               alt="Theta Clinical Support Logo" 
-              className="w-10 h-10 md:w-12 md:h-12"
+              className="w-14 h-14 md:w-20 md:h-20"
             />
             <span className="text-lg md:text-xl font-bold text-foreground">
               <span className="hidden sm:inline">Theta Clinical Support</span>
