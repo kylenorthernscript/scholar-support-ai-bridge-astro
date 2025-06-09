@@ -27,24 +27,11 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-18">
           <div className="flex items-center space-x-3">
-            <div className="relative w-10 h-10 bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-              {/* Orange accent line */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-orange-500"></div>
-              
-              {/* Content area */}
-              <div className="flex items-center justify-center h-full">
-                <span className="text-white font-bold text-lg font-serif">θ</span>
-              </div>
-              
-              {/* Subtle grid pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="grid grid-cols-3 gap-0.5 h-full p-1">
-                  <div className="bg-white rounded-sm"></div>
-                  <div className="bg-white rounded-sm"></div>
-                  <div className="bg-white rounded-sm"></div>
-                </div>
-              </div>
-            </div>
+            <img 
+              src="/logo.svg" 
+              alt="Theta Clinical Support Logo" 
+              className="w-10 h-10 md:w-12 md:h-12"
+            />
             <span className="text-lg md:text-xl font-bold text-foreground">
               <span className="hidden sm:inline">Theta Clinical Support</span>
               <span className="sm:hidden">Theta</span>
