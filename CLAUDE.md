@@ -98,3 +98,29 @@ npm run preview      # ビルド確認
 - **メール**: info@theta-tech.co.jp
 - **電話**: 03-1234-5678
 - **会社**: 株式会社シータ・テクノロジーズ
+
+## 🔐 GitHub認証設定
+
+Claude Codeから直接GitHubにプッシュするための設定：
+
+### 環境変数設定
+```bash
+# ~/.zshrcに以下を追加
+export GITHUB_TOKEN="your-github-personal-access-token"
+```
+
+### セットアップ手順
+1. GitHubで[Personal Access Token](https://github.com/settings/tokens)を生成
+2. スコープ: `repo`（フルアクセス）を選択
+3. トークンを`~/.zshrc`に追加
+4. `source ~/.zshrc`で設定を反映
+
+### プッシュ方法
+```bash
+git push  # 自動的にGITHUB_TOKENが使用されます
+```
+
+**注意**: 
+- トークンは定期的に更新が必要な場合があります
+- トークンは公開リポジトリにコミットしないでください
+- 現在このプロジェクトの`~/.zshrc`には既にトークンが設定済みです
