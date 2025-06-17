@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,7 +65,6 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-2 md:space-x-4">
-            <ThemeToggle />
             <button 
               onClick={() => scrollToSection('contact')}
               className="btn-primary text-xs md:text-sm px-3 py-2 md:px-6 md:py-3"

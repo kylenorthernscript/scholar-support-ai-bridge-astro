@@ -47,37 +47,6 @@
     --gradient-to: 142 76% 48%;
   }
 
-  .dark {
-    --background: 210 11% 4%;
-    --foreground: 210 11% 98%;
-    
-    --card: 210 11% 6%;
-    --card-foreground: 210 11% 98%;
-    
-    --popover: 210 11% 6%;
-    --popover-foreground: 210 11% 98%;
-    
-    --primary: 235 89% 70%;
-    --primary-foreground: 210 11% 4%;
-    --primary-hover: 235 89% 80%;
-    
-    --secondary: 142 76% 48%;
-    --secondary-foreground: 210 11% 4%;
-    --secondary-hover: 142 76% 58%;
-    
-    --muted: 210 11% 8%;
-    --muted-foreground: 210 11% 65%;
-    
-    --accent: 210 11% 10%;
-    --accent-foreground: 210 11% 98%;
-    
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 11% 98%;
-    
-    --border: 210 11% 15%;
-    --input: 210 11% 15%;
-    --ring: 235 89% 70%;
-  }
 }
 
 @layer base {
