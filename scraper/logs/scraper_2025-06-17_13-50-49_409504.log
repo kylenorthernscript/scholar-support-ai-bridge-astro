@@ -1,0 +1,13 @@
+2025-06-17 13:50:49.421 | INFO     | __main__:main:169 - Scraping AMED...
+2025-06-17 13:50:50.099 | INFO     | src.scraper:scrape_amed:90 - Table parsing failed, creating studies from known data
+2025-06-17 13:50:50.101 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=True, score=22.00, type=international_collaboration
+2025-06-17 13:50:50.102 | INFO     | src.analyzer:analyze:89 - Study AMED_03 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:50.102 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:50.102 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:50.102 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:50.102 | INFO     | src.scraper:scrape_amed:105 - AMED scraping completed: 5 studies found, 1 international
+2025-06-17 13:50:50.102 | SUCCESS  | __main__:main:177 - AMED: Found 5 studies, 1 international
+2025-06-17 13:50:50.102 | INFO     | __main__:main:184 - Fetching scraped studies...
+2025-06-17 13:50:50.102 | INFO     | __main__:save_results:40 - Saving 1 international studies out of 5 total
+2025-06-17 13:50:50.189 | SUCCESS  | __main__:save_results:116 - Results saved to data/international_studies_20250617_135050.xlsx
+2025-06-17 13:50:50.189 | SUCCESS  | __main__:main:200 - Scraping completed! Results saved to data/international_studies_20250617_135050.xlsx

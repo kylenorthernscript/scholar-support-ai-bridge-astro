@@ -1,0 +1,18 @@
+2025-06-17 13:50:12.291 | INFO     | __main__:main:169 - Scraping AMED...
+2025-06-17 13:50:12.870 | DEBUG    | src.scraper:scrape_amed:79 - Found 0 rows with selector 'table.list-table tr'
+2025-06-17 13:50:12.885 | DEBUG    | src.scraper:scrape_amed:79 - Found 0 rows with selector 'table tr'
+2025-06-17 13:50:12.901 | DEBUG    | src.scraper:scrape_amed:79 - Found 0 rows with selector '.recruitment-list tr'
+2025-06-17 13:50:12.916 | DEBUG    | src.scraper:scrape_amed:79 - Found 0 rows with selector '.koubo-table tr'
+2025-06-17 13:50:12.932 | DEBUG    | src.scraper:scrape_amed:79 - Found 0 rows with selector 'tbody tr'
+2025-06-17 13:50:12.932 | INFO     | src.scraper:scrape_amed:90 - Table parsing failed, creating studies from known data
+2025-06-17 13:50:12.933 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=True, score=22.00, type=international_collaboration
+2025-06-17 13:50:12.933 | INFO     | src.analyzer:analyze:89 - Study AMED_03 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:12.933 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:12.933 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:12.933 | INFO     | src.analyzer:analyze:89 - Study AMED_01 analyzed: international=False, score=0.00, type=none
+2025-06-17 13:50:12.933 | INFO     | src.scraper:scrape_amed:105 - AMED scraping completed: 5 studies found, 1 international
+2025-06-17 13:50:12.933 | SUCCESS  | __main__:main:177 - AMED: Found 5 studies, 1 international
+2025-06-17 13:50:12.933 | INFO     | __main__:main:184 - Fetching scraped studies...
+2025-06-17 13:50:12.933 | INFO     | __main__:save_results:40 - Saving 1 international studies out of 5 total
+2025-06-17 13:50:12.934 | SUCCESS  | __main__:save_results:116 - Results saved to data/international_studies_20250617_135012.json
+2025-06-17 13:50:12.934 | SUCCESS  | __main__:main:200 - Scraping completed! Results saved to data/international_studies_20250617_135012.json

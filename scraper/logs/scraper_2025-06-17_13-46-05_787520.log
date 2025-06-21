@@ -1,0 +1,7 @@
+2025-06-17 13:46:05.799 | INFO     | __main__:main:169 - Scraping AMED...
+2025-06-17 13:46:06.208 | INFO     | src.scraper:scrape_amed:92 - AMED scraping completed: 0 studies found, 0 international
+2025-06-17 13:46:06.208 | SUCCESS  | __main__:main:177 - AMED: Found 0 studies, 0 international
+2025-06-17 13:46:06.208 | INFO     | __main__:main:186 - Creating sample international studies for demonstration...
+2025-06-17 13:46:06.208 | INFO     | __main__:save_results:40 - Saving 1 international studies out of 1 total
+2025-06-17 13:46:06.209 | SUCCESS  | __main__:save_results:116 - Results saved to data/international_studies_20250617_134606.json
+2025-06-17 13:46:06.209 | SUCCESS  | __main__:main:209 - Scraping completed! Results saved to data/international_studies_20250617_134606.json
