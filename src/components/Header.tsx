@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20 md:h-24">
           <div className="flex items-center space-x-3 md:space-x-4">
             <img 
-              src="/logo.png" 
+              src="/logo.svg" 
               alt="Theta Clinical Support Logo" 
               className="w-14 h-14 md:w-20 md:h-20"
             />
