@@ -76,7 +76,7 @@ export const ChatbotWidget: React.FC = () => {
   return (
     <>
       {/* Floating button - Enhanced visibility */}
-      <div className={`fixed bottom-6 right-6 z-50 ${isOpen ? 'scale-0' : 'scale-100'} transition-all`}>
+      <div className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 ${isOpen ? 'scale-0' : 'scale-100'} transition-all`}>
         {/* Pulsing ring effect */}
         <div className="absolute inset-0 h-16 w-16 animate-ping rounded-full bg-blue-400 opacity-75"></div>
         <div className="absolute inset-0 h-16 w-16 animate-ping rounded-full bg-blue-400 opacity-50" style={{ animationDelay: '0.5s' }}></div>
@@ -107,7 +107,7 @@ export const ChatbotWidget: React.FC = () => {
 
       {/* Chat window */}
       <div
-        className={`fixed bottom-6 right-6 z-50 flex h-[600px] w-[400px] flex-col overflow-hidden rounded-lg bg-white shadow-2xl transition-all ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex h-[calc(100vh-2rem)] sm:h-[600px] w-[calc(100vw-2rem)] sm:w-[400px] max-w-[400px] flex-col overflow-hidden rounded-lg bg-white shadow-2xl transition-all ${
           isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
         }`}
       >

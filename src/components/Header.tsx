@@ -31,9 +31,9 @@ const Header = () => {
               alt="Theta Clinical Support Logo" 
               className="w-14 h-14 md:w-20 md:h-20"
             />
-            <span className="text-lg md:text-xl font-bold text-foreground">
+            <span className="text-base sm:text-lg md:text-xl font-bold text-foreground">
               <span className="hidden sm:inline">Theta Clinical Support</span>
-              <span className="sm:hidden">Theta</span>
+              <span className="sm:hidden">Theta Clinical Support</span>
             </span>
           </div>
           
