@@ -107,7 +107,7 @@ export const ChatbotWidget: React.FC = () => {
 
       {/* Chat window */}
       <div
-        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex h-[calc(100vh-2rem)] sm:h-[600px] w-[calc(100vw-2rem)] sm:w-[400px] max-w-[400px] flex-col overflow-hidden rounded-lg bg-white shadow-2xl transition-all ${
+        className={`fixed inset-4 sm:inset-auto sm:bottom-6 sm:right-6 z-50 flex sm:h-[600px] sm:w-[400px] max-w-[400px] flex-col overflow-hidden rounded-lg bg-white shadow-2xl transition-all ${
           isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
         }`}
       >
