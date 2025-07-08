@@ -1,37 +1,29 @@
 ---
-// Astro メインページ
+// Astro メインページ - 簡素化版
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import HeroSection from '../components/HeroSection.astro';
-import ProblemsSection from '../components/ProblemsSection.astro';
-import SolutionSection from '../components/SolutionSection.astro';
-import ServicesSection from '../components/ServicesSection.astro';
-import ProcessSection from '../components/ProcessSection.astro';
-import FeaturesSection from '../components/FeaturesSection.astro';
+import ServiceOverview from '../components/ServiceOverview.astro';
+import SimpleProcess from '../components/SimpleProcess.astro';
+import SimpleFeatures from '../components/SimpleFeatures.astro';
 import FAQSection from '../components/FAQSection.astro';
-import DetailedInfoSection from '../components/DetailedInfoSection.astro';
 import CompanySection from '../components/CompanySection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import Footer from '../components/Footer.astro';
-// import { ChatbotWidget } from '../components/chatbot/ChatbotWidget';
 ---
 
-<Layout title="シータ・クリニカル・サポート | 臨床研究参加者リクルート・翻訳・事務代行">
+<Layout title="シータ・クリニカル・サポート | 医療翻訳・通訳・外国人研究参加者リクルートサービス">
   <div class="min-h-screen">
     <Header />
     <main>
       <HeroSection />
-      <ProblemsSection />
-      <SolutionSection />
-      <ServicesSection />
-      <ProcessSection />
-      <FeaturesSection />
-      <DetailedInfoSection />
+      <ServiceOverview />
+      <SimpleProcess />
+      <SimpleFeatures />
       <FAQSection />
       <CompanySection />
       <ContactSection />
     </main>
     <Footer />
-    <!-- <ChatbotWidget client:load /> -->
   </div>
 </Layout>
