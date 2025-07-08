@@ -37,13 +37,30 @@ const Header = () => {
             </span>
           </div>
           
-          <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-muted-foreground hover:text-primary transition-colors font-medium"
-            >
-              サービス内容
-            </button>
+          <nav className="hidden md:flex items-center space-x-6">
+            <div className="relative group">
+              <button className="text-muted-foreground hover:text-primary transition-colors font-medium flex items-center">
+                サービス
+                <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <a href="/medical-translation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  医療翻訳・通訳サービス
+                </a>
+                <a href="/research-recruitment" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  日本在住外国人リクルート
+                </a>
+                <div className="border-t border-gray-200 my-2"></div>
+                <button 
+                  onClick={() => scrollToSection('services')}
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  サービス一覧
+                </button>
+              </div>
+            </div>
             <button 
               onClick={() => scrollToSection('features')}
               className="text-muted-foreground hover:text-primary transition-colors font-medium"

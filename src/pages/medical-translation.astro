@@ -1,0 +1,630 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import type { Language } from '../types/language';
+
+const lang = 'ja' as Language;
+---
+
+<Layout 
+  title="医療翻訳・通訳サービス | Theta Clinical Support" 
+  description="臨床研究・医療分野に特化した高品質な翻訳・通訳サービス。専門知識を持った翻訳者が、正確で信頼性の高い医療翻訳をご提供します。"
+  lang={lang}
+>
+  <Header client:load activePage={"/medical-translation"} lang={lang} />
+  
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-12 lg:pt-32 lg:pb-16 bg-gradient-to-br from-sky-50 via-white to-blue-50">
+    <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] -z-10"></div>
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          医療翻訳・通訳サービス
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 mb-8">
+          臨床研究・医療分野に特化した<br class="md:hidden" />
+          高精度な翻訳・通訳をご提供
+        </p>
+        <p class="text-lg text-gray-600 mb-8">
+          専門知識を持った翻訳者が、医療文書、研究論文、<br class="hidden md:block" />
+          治験関連文書などを正確に翻訳します
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors">
+            お問い合わせ
+            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary bg-white border-2 border-primary rounded-lg hover:bg-primary/5 transition-colors">
+            サービス詳細を見る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          提供サービス
+        </h2>
+        <p class="text-lg text-gray-600">
+          医療・臨床研究分野の専門性を活かした翻訳・通訳サービス
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- 医療文書翻訳 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">医療文書翻訳</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              診療記録・カルテ
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              医療機器マニュアル
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              患者向け説明資料
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              医薬品添付文書
+            </li>
+          </ul>
+        </div>
+
+        <!-- 研究論文翻訳 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">研究論文翻訳</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              学術論文
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              研究計画書
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              学会発表資料
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              メタアナリシス
+            </li>
+          </ul>
+        </div>
+
+        <!-- 治験関連翻訳 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">治験関連翻訳</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              治験実施計画書
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              同意説明文書
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              症例報告書(CRF)
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              治験薬概要書
+            </li>
+          </ul>
+        </div>
+
+        <!-- 医療通訳 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">医療通訳</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              診察時の通訳
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              カンファレンス通訳
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              オンライン診療通訳
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              緊急時対応
+            </li>
+          </ul>
+        </div>
+
+        <!-- 規制文書翻訳 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">規制文書翻訳</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              薬事申請書類
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              CTD文書
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              監査報告書
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              SOP文書
+            </li>
+          </ul>
+        </div>
+
+        <!-- マーケティング資料翻訳 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">マーケティング資料</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              製品パンフレット
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              プレスリリース
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              ウェブサイト
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              学会展示資料
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          対応可能なヘルスケア領域
+        </h2>
+        <p class="text-lg text-gray-600">
+          医療・健康・ウェルネスの幅広い分野に精通した専門翻訳者が在籍
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        <!-- 一般医療分野 -->
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🏥</div>
+          <h3 class="font-semibold text-gray-900">一般診療</h3>
+          <p class="text-xs text-gray-600 mt-1">内科・外科・総合診療</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">💊</div>
+          <h3 class="font-semibold text-gray-900">薬局・調剤</h3>
+          <p class="text-xs text-gray-600 mt-1">処方薬・市販薬の説明</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🩺</div>
+          <h3 class="font-semibold text-gray-900">健康診断</h3>
+          <p class="text-xs text-gray-600 mt-1">検査結果・健診報告書</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🚑</div>
+          <h3 class="font-semibold text-gray-900">救急医療</h3>
+          <p class="text-xs text-gray-600 mt-1">緊急対応・応急処置</p>
+        </div>
+        
+        <!-- 治験関連 -->
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">📋</div>
+          <h3 class="font-semibold text-gray-900">治験申請</h3>
+          <p class="text-xs text-gray-600 mt-1">IRB申請・倫理委員会</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">📊</div>
+          <h3 class="font-semibold text-gray-900">治験実施</h3>
+          <p class="text-xs text-gray-600 mt-1">プロトコル・同意説明</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">📝</div>
+          <h3 class="font-semibold text-gray-900">治験データ管理</h3>
+          <p class="text-xs text-gray-600 mt-1">CRF・モニタリング報告</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🔍</div>
+          <h3 class="font-semibold text-gray-900">薬事申請</h3>
+          <p class="text-xs text-gray-600 mt-1">承認申請・当局対応</p>
+        </div>
+        
+        <!-- ヘルスケア・ウェルネス -->
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">💉</div>
+          <h3 class="font-semibold text-gray-900">予防接種</h3>
+          <p class="text-xs text-gray-600 mt-1">ワクチン・予防医療</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🍎</div>
+          <h3 class="font-semibold text-gray-900">栄養指導</h3>
+          <p class="text-xs text-gray-600 mt-1">食事療法・生活習慣病</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🏃</div>
+          <h3 class="font-semibold text-gray-900">リハビリ</h3>
+          <p class="text-xs text-gray-600 mt-1">理学療法・作業療法</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">👵</div>
+          <h3 class="font-semibold text-gray-900">介護・高齢者ケア</h3>
+          <p class="text-xs text-gray-600 mt-1">在宅医療・介護サービス</p>
+        </div>
+        
+        <!-- 医療機器・製品 -->
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🔧</div>
+          <h3 class="font-semibold text-gray-900">医療機器</h3>
+          <p class="text-xs text-gray-600 mt-1">取扱説明書・安全情報</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">💊</div>
+          <h3 class="font-semibold text-gray-900">医薬品情報</h3>
+          <p class="text-xs text-gray-600 mt-1">添付文書・副作用情報</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">🏥</div>
+          <h3 class="font-semibold text-gray-900">病院システム</h3>
+          <p class="text-xs text-gray-600 mt-1">電子カルテ・院内文書</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-2xl mb-2">📱</div>
+          <h3 class="font-semibold text-gray-900">ヘルスケアアプリ</h3>
+          <p class="text-xs text-gray-600 mt-1">健康管理・遠隔診療</p>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-4">その他の専門分野にも対応可能です</p>
+        <a href="#contact" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+          お問い合わせください
+          <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Assurance Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          品質保証体制
+        </h2>
+        <p class="text-lg text-gray-600">
+          高品質な翻訳を確実にお届けするための徹底した品質管理
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-primary">1</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">専門翻訳者による翻訳</h3>
+          <p class="text-gray-600">医療・研究分野の専門知識を持つ翻訳者が担当</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-primary">2</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">専門家による校正</h3>
+          <p class="text-gray-600">医療従事者による専門用語・内容の確認</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-primary">3</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">ネイティブチェック</h3>
+          <p class="text-gray-600">母語話者による自然な表現への調整</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-primary">4</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">最終品質確認</h3>
+          <p class="text-gray-600">納品前の総合的な品質チェック</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          こんな方におすすめ
+        </h2>
+        <p class="text-lg text-gray-600">
+          医療翻訳・通訳でお困りの様々な方々をサポートいたします
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">製薬会社</h3>
+          <p class="text-gray-600">治験文書、薬事申請書類、製品情報の翻訳が必要な企業様</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">医療機関</h3>
+          <p class="text-gray-600">外国人患者対応、国際共同研究で翻訳・通訳が必要な病院様</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">研究者・大学</h3>
+          <p class="text-gray-600">論文投稿、学会発表で英訳・和訳が必要な研究者の方</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">医療機器メーカー</h3>
+          <p class="text-gray-600">取扱説明書、技術文書の翻訳が必要なメーカー様</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">CRO・SMO</h3>
+          <p class="text-gray-600">治験関連業務で翻訳サポートが必要な支援機関様</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">患者様・ご家族</h3>
+          <p class="text-gray-600">海外での治療、セカンドオピニオンで通訳が必要な方</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection lang={lang} />
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          お問い合わせ
+        </h2>
+        <p class="text-lg text-gray-600">
+          医療翻訳・通訳に関するご相談はお気軽にお問い合わせください
+        </p>
+      </div>
+      
+      <div class="max-w-2xl mx-auto">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                会社名・機関名
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="株式会社○○"
+              />
+            </div>
+            
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                お名前
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="山田 太郎"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+              メールアドレス <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="info@example.com"
+            />
+          </div>
+          
+          <div>
+            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">
+              ご希望のサービス
+            </label>
+            <select
+              id="service"
+              name="service"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+            >
+              <option value="">選択してください</option>
+              <option value="medical-docs">医療文書翻訳</option>
+              <option value="research">研究論文翻訳</option>
+              <option value="clinical-trial">治験関連翻訳</option>
+              <option value="interpretation">医療通訳</option>
+              <option value="regulatory">規制文書翻訳</option>
+              <option value="marketing">マーケティング資料</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+              お問い合わせ内容 <span class="text-red-500">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={6}
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="翻訳・通訳のご依頼内容、納期、予算などをお聞かせください"
+            ></textarea>
+          </div>
+          
+          <div class="text-center">
+            <button
+              type="submit"
+              class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              送信する
+              <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Layout>

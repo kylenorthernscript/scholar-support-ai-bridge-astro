@@ -1,0 +1,755 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import type { Language } from '../types/language';
+
+const lang = 'ja' as Language;
+---
+
+<Layout 
+  title="日本在住外国人研究参加者リクルートサービス | Theta Clinical Support" 
+  description="日本在住外国人を対象とした学術研究、ユーザースタディ、アンケート調査などの参加者募集を専門的にサポート。多様な国籍・言語背景を持つ外国人参加者を効率的にリクルートします。"
+  lang={lang}
+>
+  <Header client:load activePage={"/research-recruitment"} lang={lang} />
+  
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-12 lg:pt-32 lg:pb-16 bg-gradient-to-br from-emerald-50 via-white to-green-50">
+    <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] -z-10"></div>
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          日本在住外国人<br class="md:hidden" />
+          研究参加者リクルートサービス
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 mb-8">
+          日本在住の外国人を対象とした<br class="md:hidden" />
+          学術研究・ユーザースタディの参加者募集
+        </p>
+        <p class="text-lg text-gray-600 mb-8">
+          多様な国籍・言語背景を持つ日本在住外国人の<br class="hidden md:block" />
+          リクルートに特化した専門サービスです
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-secondary rounded-lg hover:bg-secondary/90 transition-colors">
+            お問い合わせ
+            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-secondary bg-white border-2 border-secondary rounded-lg hover:bg-secondary/5 transition-colors">
+            サービス詳細を見る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          対応可能な研究タイプ
+        </h2>
+        <p class="text-lg text-gray-600">
+          日本在住外国人を対象とした様々な研究分野の参加者リクルートをサポート
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- ユーザースタディ -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">ユーザースタディ</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              UX/UIテスト
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              プロトタイプ評価
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              アプリ・ウェブサイト評価
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              製品使用感調査
+            </li>
+          </ul>
+        </div>
+
+        <!-- 学術研究 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">学術研究</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              心理学研究
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              社会学研究
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              教育学研究
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              行動経済学研究
+            </li>
+          </ul>
+        </div>
+
+        <!-- ミステリーショッパー -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">ミステリーショッパー</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              店舗サービス評価
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              顧客体験調査
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              競合調査
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              品質チェック
+            </li>
+          </ul>
+        </div>
+
+        <!-- アンケート調査 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">アンケート調査</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              市場調査
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              顧客満足度調査
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              ブランド認知度調査
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              ニーズ調査
+            </li>
+          </ul>
+        </div>
+
+        <!-- フォーカスグループ -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">フォーカスグループ</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              グループインタビュー
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              コンセプトテスト
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              商品開発ディスカッション
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              ワークショップ
+            </li>
+          </ul>
+        </div>
+
+        <!-- インタビュー調査 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">インタビュー調査</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              デプスインタビュー
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              エキスパートインタビュー
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              エスノグラフィー調査
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              オンラインインタビュー
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          リクルートプロセス
+        </h2>
+        <p class="text-lg text-gray-600">
+          効率的で質の高い参加者募集を実現する6つのステップ
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="relative">
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+              <span class="text-xl font-bold text-secondary">1</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">要件ヒアリング</h3>
+            <p class="text-gray-600">研究目的、対象者条件、サンプル数などの詳細を確認</p>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+              <span class="text-xl font-bold text-secondary">2</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">募集計画策定</h3>
+            <p class="text-gray-600">最適な募集チャネルと方法を選定し、計画を立案</p>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+              <span class="text-xl font-bold text-secondary">3</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">参加者募集</h3>
+            <p class="text-gray-600">多様なチャネルを活用して対象者にアプローチ</p>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+              <span class="text-xl font-bold text-secondary">4</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">スクリーニング</h3>
+            <p class="text-gray-600">条件に合致する適切な参加者を選定</p>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+              <span class="text-xl font-bold text-secondary">5</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">日程調整</h3>
+            <p class="text-gray-600">参加者と研究者の都合を調整し、スケジュール確定</p>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+              <span class="text-xl font-bold text-secondary">6</span>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">当日サポート</h3>
+            <p class="text-gray-600">参加者管理、受付対応などの運営支援</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          サービスの特徴
+        </h2>
+        <p class="text-lg text-gray-600">
+          研究者の皆様の負担を軽減し、質の高い研究を実現
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">迅速な対応</h3>
+              <p class="text-gray-600">豊富なデータベースと効率的なプロセスで、短期間での参加者確保が可能</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">高品質な参加者</h3>
+              <p class="text-gray-600">厳格なスクリーニングプロセスで、研究目的に最適な参加者を選定</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">多様な国籍・言語背景</h3>
+              <p class="text-gray-600">様々な国籍・言語背景を持つ日本在住外国人を幅広くカバー</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">コンプライアンス対応</h3>
+              <p class="text-gray-600">個人情報保護、倫理規定に準拠した適切な管理体制</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foreign Residents Features Section -->
+  <section class="py-16 lg:py-24 bg-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          日本在住外国人リクルートの特色
+        </h2>
+        <p class="text-lg text-gray-600">
+          多様な文化背景を持つ外国人参加者との接点を豊富に保有
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div class="bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🌏</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">多国籍対応</h3>
+          <p class="text-sm text-gray-600">アジア、欧米、中東など様々な地域出身者</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🗣️</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">多言語対応</h3>
+          <p class="text-sm text-gray-600">英語、中国語、韓国語、スペイン語など主要言語</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">👥</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">幅広い属性</h3>
+          <p class="text-sm text-gray-600">年齢、職業、在住年数など多様な背景</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🏢</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">在住区分</h3>
+          <p class="text-sm text-gray-600">永住者、就労、留学、技能実習など</p>
+        </div>
+      </div>
+      
+      <!-- Detailed breakdown -->
+      <div class="mt-12 bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">対象者詳細</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+              <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+              出身国・地域
+            </h4>
+            <ul class="space-y-1 text-sm text-gray-600">
+              <li>• 中国、韓国、台湾</li>
+              <li>• 東南アジア各国</li>
+              <li>• アメリカ、ヨーロッパ</li>
+              <li>• 南米、中東、アフリカ</li>
+              <li>• その他100カ国以上</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              在留資格
+            </h4>
+            <ul class="space-y-1 text-sm text-gray-600">
+              <li>• 永住者・定住者</li>
+              <li>• 技術・人文知識・国際業務</li>
+              <li>• 留学生</li>
+              <li>• 技能実習生</li>
+              <li>• 特定技能・研究者</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+              <svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              職業・属性
+            </h4>
+            <ul class="space-y-1 text-sm text-gray-600">
+              <li>• IT・エンジニア</li>
+              <li>• 研究者・教育関係</li>
+              <li>• 製造業・サービス業</li>
+              <li>• 学生・主婦</li>
+              <li>• 自営業・フリーランス</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          こんな方におすすめ
+        </h2>
+        <p class="text-lg text-gray-600">
+          参加者リクルートでお困りの様々な組織をサポート
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">大学・研究機関</h3>
+          <p class="text-gray-600">論文執筆や学会発表のための研究で、多様な参加者が必要な研究者</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">企業・メーカー</h3>
+          <p class="text-gray-600">新商品開発やサービス改善のためのユーザー調査が必要な企業</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">IT・デザイン会社</h3>
+          <p class="text-gray-600">UI/UXテストやプロトタイプ評価でユーザーフィードバックが必要な企業</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">マーケティング会社</h3>
+          <p class="text-gray-600">市場調査や顧客インサイト発見のための調査が必要な企業</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">小売・サービス業</h3>
+          <p class="text-gray-600">店舗評価やサービス品質向上のための覆面調査が必要な企業</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">シンクタンク・コンサル</h3>
+          <p class="text-gray-600">政策研究や業界分析のための調査が必要な組織</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection lang={lang} />
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          お問い合わせ
+        </h2>
+        <p class="text-lg text-gray-600">
+          研究参加者リクルートに関するご相談はお気軽にお問い合わせください
+        </p>
+      </div>
+      
+      <div class="max-w-2xl mx-auto">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="organization" class="block text-sm font-medium text-gray-700 mb-2">
+                組織名
+              </label>
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="○○大学／株式会社○○"
+              />
+            </div>
+            
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                お名前
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="山田 太郎"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+              メールアドレス <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+              placeholder="info@example.com"
+            />
+          </div>
+          
+          <div>
+            <label for="research-type" class="block text-sm font-medium text-gray-700 mb-2">
+              研究タイプ
+            </label>
+            <select
+              id="research-type"
+              name="research-type"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+            >
+              <option value="">選択してください</option>
+              <option value="user-study">ユーザースタディ</option>
+              <option value="academic">学術研究</option>
+              <option value="mystery-shopper">ミステリーショッパー</option>
+              <option value="survey">アンケート調査</option>
+              <option value="focus-group">フォーカスグループ</option>
+              <option value="interview">インタビュー調査</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="participants" class="block text-sm font-medium text-gray-700 mb-2">
+                希望参加者数
+              </label>
+              <input
+                type="text"
+                id="participants"
+                name="participants"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="20名程度"
+              />
+            </div>
+            
+            <div>
+              <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">
+                実施予定時期
+              </label>
+              <input
+                type="text"
+                id="timeline"
+                name="timeline"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="2024年3月頃"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+              詳細内容 <span class="text-red-500">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={6}
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+              placeholder="研究概要、対象者の条件、実施方法などをお聞かせください"
+            ></textarea>
+          </div>
+          
+          <div class="text-center">
+            <button
+              type="submit"
+              class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-secondary rounded-lg hover:bg-secondary/90 transition-colors"
+            >
+              送信する
+              <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</Layout>
