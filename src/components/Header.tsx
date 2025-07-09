@@ -80,12 +80,6 @@ const Header = ({ activePage }: HeaderProps) => {
             >
               よくある質問
             </button>
-            <a 
-              href="/about"
-              className="text-muted-foreground hover:text-primary transition-colors font-medium"
-            >
-              会社概要
-            </a>
             <button 
               onClick={() => scrollToSection('company')}
               className="text-muted-foreground hover:text-primary transition-colors font-medium"

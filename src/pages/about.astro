@@ -68,7 +68,7 @@ const lang = 'ja' as Language;
                 <div class="text-sm text-gray-600">創業からの実績</div>
               </div>
               <div class="text-center p-4 bg-green-50 rounded-lg">
-                <div class="text-2xl font-bold text-green-600">2つ</div>
+                <div class="text-2xl font-bold text-green-600">2分野</div>
                 <div class="text-sm text-gray-600">専門サービス</div>
               </div>
             </div>
@@ -157,6 +157,10 @@ const lang = 'ja' as Language;
                   <dt class="text-sm font-medium text-gray-500">所在地</dt>
                   <dd class="text-gray-900">【PLACEHOLDER - 住所を入力してください】</dd>
                 </div>
+                <div>
+                  <dt class="text-sm font-medium text-gray-500">代表者</dt>
+                  <dd class="text-gray-900">【PLACEHOLDER - 代表者名】</dd>
+                </div>
               </dl>
             </div>
             
@@ -170,14 +174,6 @@ const lang = 'ja' as Language;
                 <div>
                   <dt class="text-sm font-medium text-gray-500">電話番号</dt>
                   <dd class="text-gray-900">【PLACEHOLDER - 電話番号を取得後に入力】</dd>
-                </div>
-                <div>
-                  <dt class="text-sm font-medium text-gray-500">営業時間</dt>
-                  <dd class="text-gray-900">【PLACEHOLDER - 営業時間】</dd>
-                </div>
-                <div>
-                  <dt class="text-sm font-medium text-gray-500">定休日</dt>
-                  <dd class="text-gray-900">【PLACEHOLDER - 定休日】</dd>
                 </div>
               </dl>
             </div>
@@ -237,14 +233,57 @@ const lang = 'ja' as Language;
     </div>
   </section>
 
+  <!-- CEO Message Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+          代表者挨拶
+        </h2>
+        
+        <div class="bg-gray-50 rounded-xl p-8 md:p-12">
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="flex-shrink-0">
+              <div class="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center">
+                <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            </div>
+            
+            <div class="flex-1">
+              <div class="text-center md:text-left mb-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  【PLACEHOLDER - 代表者名】
+                </h3>
+                <p class="text-gray-600">
+                  株式会社シータ・テクノロジーズ 代表取締役社長
+                </p>
+              </div>
+              
+              <div class="prose prose-lg max-w-none text-gray-700">
+                <p class="mb-4">
+                  【PLACEHOLDER - CEOメッセージ】
+                </p>
+                <p class="mb-4">
+                  シータ・クリニカル・サポートは、医療・研究分野における言語の壁を取り除き、研究者の皆様が本来の業務に集中できる環境を提供することを使命として、2008年の創業以来16年間にわたって専門サービスを提供してまいりました。
+                </p>
+                <p class="mb-4">
+                  医療翻訳・通訳サービスでは、高度な専門知識を持つ翻訳者・通訳者が、正確で信頼性の高いサービスを提供いたします。また、日本在住外国人を対象とした研究参加者リクルートサービスでは、多様な国籍・言語背景を持つ参加者を効率的にリクルートし、研究の質向上に貢献いたします。
+                </p>
+                <p>
+                  今後も医療の発展と研究の推進に貢献し、より良い医療サービスの実現を目指してまいります。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Features Section -->
   <SimpleFeatures />
-
-  <!-- FAQ Section -->
-  <FAQSection lang={lang} />
-
-  <!-- Company Section -->
-  <CompanySection />
 
   <!-- Contact Section -->
   <ContactSection />
