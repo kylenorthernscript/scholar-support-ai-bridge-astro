@@ -25,7 +25,7 @@ const Header = () => {
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 md:h-24">
-          <div className="flex items-center space-x-3 md:space-x-4">
+          <a href="/" className="flex items-center space-x-3 md:space-x-4 hover:opacity-80 transition-opacity">
             <img 
               src="/logo.png" 
               alt="Theta Clinical Support Logo" 
@@ -35,7 +35,7 @@ const Header = () => {
               <span className="hidden sm:inline">Theta Clinical Support</span>
               <span className="sm:hidden">Theta Clinical Support</span>
             </span>
-          </div>
+          </a>
           
           <nav className="hidden md:flex items-center space-x-6">
             <div className="relative group">
