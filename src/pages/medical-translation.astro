@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import Footer from '../components/Footer.astro';
 import FAQSection from '../components/FAQSection.astro';
+import SimpleFeatures from '../components/SimpleFeatures.astro';
+import CompanySection from '../components/CompanySection.astro';
 import type { Language } from '../types/language';
 
 const lang = 'ja' as Language;
@@ -14,7 +16,7 @@ const lang = 'ja' as Language;
   description="臨床研究・医療分野に特化した高品質な翻訳・通訳サービス。専門知識を持った翻訳者が、正確で信頼性の高い医療翻訳をご提供します。"
   lang={lang}
 >
-  <Header client:load activePage={"/medical-translation"} lang={lang} />
+  <Header client:load activePage="/medical-translation" />
   
   <!-- Hero Section -->
   <section class="relative pt-24 pb-12 lg:pt-32 lg:pb-16 bg-gradient-to-br from-sky-50 via-white to-blue-50">
@@ -528,8 +530,14 @@ const lang = 'ja' as Language;
     </div>
   </section>
 
+  <!-- Features Section -->
+  <SimpleFeatures />
+
   <!-- FAQ Section -->
   <FAQSection lang={lang} />
+
+  <!-- Company Section -->
+  <CompanySection />
 
   <!-- Contact Section -->
   <section id="contact" class="py-16 lg:py-24 bg-white">

@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const Header = () => {
+interface HeaderProps {
+  activePage?: string;
+}
+
+const Header = ({ activePage }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,6 +20,9 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If section doesn't exist on current page, navigate to homepage with anchor
+      window.location.href = `/#${id}`;
     }
   };
 
@@ -73,6 +80,12 @@ const Header = () => {
             >
               よくある質問
             </button>
+            <a 
+              href="/about"
+              className="text-muted-foreground hover:text-primary transition-colors font-medium"
+            >
+              会社概要
+            </a>
             <button 
               onClick={() => scrollToSection('company')}
               className="text-muted-foreground hover:text-primary transition-colors font-medium"

@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import Footer from '../components/Footer.astro';
 import FAQSection from '../components/FAQSection.astro';
+import SimpleFeatures from '../components/SimpleFeatures.astro';
+import CompanySection from '../components/CompanySection.astro';
 import type { Language } from '../types/language';
 
 const lang = 'ja' as Language;
@@ -14,7 +16,7 @@ const lang = 'ja' as Language;
   description="日本在住外国人を対象とした学術研究、ユーザースタディ、アンケート調査などの参加者募集を専門的にサポート。多様な国籍・言語背景を持つ外国人参加者を効率的にリクルートします。"
   lang={lang}
 >
-  <Header client:load activePage={"/research-recruitment"} lang={lang} />
+  <Header client:load activePage="/research-recruitment" />
   
   <!-- Hero Section -->
   <section class="relative pt-24 pb-12 lg:pt-32 lg:pb-16 bg-gradient-to-br from-emerald-50 via-white to-green-50">
@@ -614,8 +616,14 @@ const lang = 'ja' as Language;
     </div>
   </section>
 
+  <!-- Features Section -->
+  <SimpleFeatures />
+
   <!-- FAQ Section -->
   <FAQSection lang={lang} />
+
+  <!-- Company Section -->
+  <CompanySection />
 
   <!-- Contact Section -->
   <section id="contact" class="py-16 lg:py-24 bg-white">
