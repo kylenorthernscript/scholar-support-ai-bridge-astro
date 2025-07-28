@@ -93,6 +93,11 @@ npm run preview      # ビルド確認
 - アクセシビリティの劣化
 - 不要な外部依存関係追加
 
+### Git コミットルール
+- **重要**: コミットメッセージにClaude Codeを使用していることを示すメッセージ（"🤖 Generated with Claude Code"、"Co-Authored-By: Claude"など）は含めない
+- シンプルで明確なコミットメッセージを使用する
+- 変更内容を簡潔に説明する
+
 ## 📞 コンタクト情報
 
 - **メール**: info@theta-tech.co.jp
